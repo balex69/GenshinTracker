@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem, ipsum.</title>
+    <meta name="description" content="Lorem desc">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body class="dark viewChar">
+  <div class="wrapper">
+    <div class="toggle-theme"><img src="./assets/theme/toLight.png" alt="Petite icône pour changer de thème (soleil ou lune selon le thème actuel)!"></div>
+    <h1>Genshin Collection Tracker</h1>
+    <h2>Easily keep track of and share your Genshin units & weapons !</h2>
+    <ul id="switchUnits" class="filterList">
+      <li id="btnShowChar" class="btnSwitchUnit on" data-type="char"> Personnages </li>
+      <li id="btnShowWeap" class="btnSwitchUnit" data-type="weap"> Armes </li>
+    </ul>
+    <article id="chars" class>
+      <ul id="filterCharElement" class="filterList">
+        <li class="btnFilter charFilter" data-filter="ElementAnemo">
+          <img src="./assets/general/anemo.png" alt="Image représentant l'élément Anemo">
+        </li>
+        <li class="btnFilter charFilter" data-filter="ElementCryo">
+          <img src="./assets/general/cryo.png" alt="Image représentant l'élément Cryo">
+        </li>
+        <li class="btnFilter charFilter" data-filter="ElementElectro">
+          <img src="./assets/general/electro.png" alt="Image représentant l'élément Electro">
+        </li>
+        <li class="btnFilter charFilter" data-filter="ElementDendro">
+          <img src="./assets/general/dendro.png" alt="Image représentant l'élément Dendro">
+        </li>
+        <li class="btnFilter charFilter" data-filter="ElementGeo">
+          <img src="./assets/general/geo.png" alt="Image représentant l'élément Geo">
+        </li>
+        <li class="btnFilter charFilter" data-filter="ElementHydro">
+          <img src="./assets/general/hydro.png" alt="Image représentant l'élément Hydro">
+        </li>
+        <li class="btnFilter charFilter" data-filter="ElementPyro">
+          <img src="./assets/general/pyro.png" alt="Image représentant l'élément Pyro">
+        </li>
+      </ul>
+      <ul id="filterCharRarity" class="filterList">
+        <li class="btnFilter charFilter" data-filter="Rarity5">
+          <img src="./assets/general/5star.png" alt="Icône repésentant la rareté 5"
+        </li>
+        <li class="btnFilter charFilter" data-filter="Rarity4">
+          <img src="./assets/general/4star.png" alt="Icône repésentant la rareté 4"
+        </li>
+      </ul>
+      <br>
+      <section id="charRarity5">
+        <h3><img src="./assets/general/5star.png" alt="5 étoiles"></h3>
+        <ul class="Rarity5 charList unitList">
+          <!--Personnages de rareté 5 pulls depuis la db -->
+        </ul>
+      </section>
+      <section id="charRarity4">
+        <h3><img src="./assets/general/4star.png" alt="4 étoiles"></h3>
+        <ul class="Rarity4 charList unitList">
+          <!--Personnages de rareté 4 pulls depuis la db-->
+        </ul>
+      </section>
+    </article>
+    <article id="weaps" class>
+      <ul id="filterWeaponType" class="filterList">
+        <li class="btnFilter weapFilter" data-filter="TypeArc">
+          <img src="./assets/general/arc.png" alt="Image représentant l'arc">
+        </li>
+        <li class="btnFilter weapFilter" data-filter="TypeOrbe">
+          <img src="./assets/general/orbe.png" alt="Image représentant le catalyste">
+        </li>
+        <li class="btnFilter weapFilter" data-filter="TypeEpee1">
+          <img src="./assets/general/epee1.png" alt="Image représentant l'épée à 1 main">
+        </li>
+        <li class="btnFilter weapFilter" data-filter="TypeEpee2">
+          <img src="./assets/general/epee2.png" alt="Image représentant l'épée à 2 mains">
+        </li>
+        <li class="btnFilter weapFilter" data-filter="TypeHast">
+          <img src="./assets/general/hast.png" alt="Image représentant l'arme d'hast">
+        </li>
+      </ul>
+      <ul id="filterWeapRarity" class="filterList">
+        <li class="btnFilter weapFilter" data-filter="Rarity5">
+          <img src="./assets/general/5star.png" alt="Icône repésentant la rareté 5"
+        </li>
+        <li class="btnFilter weapFilter" data-filter="Rarity4">
+          <img src="./assets/general/4star.png" alt="Icône repésentant la rareté 4"
+        </li>
+      </ul>
+      <br>
+      <section id="charRarity5">
+        <h3><img src="./assets/general/5star.png" alt="5 étoiles"></h3>
+        <ul class="Rarity5 weapList unitList">
+          <!--Personnages de rareté 5 pulls depuis la db -->
+        </ul>
+      </section>
+      <section id="charRarity4">
+        <h3><img src="./assets/general/4star.png" alt="4 étoiles"></h3>
+        <ul class="Rarity4 weapList unitList">
+          <!--Personnages de rareté 4 pulls depuis la db-->
+        </ul>
+      </section>
+    </article>
+  </div>
+  <script src="./theme.js"></script>
+</html>

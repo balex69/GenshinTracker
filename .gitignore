@@ -1,6 +1,9 @@
 public/assets/
 b.md
 a.md
+server/app.js
 server/app2.js
 server/app3.js
 server/app4.js
+server/testing.js
+server/test.js

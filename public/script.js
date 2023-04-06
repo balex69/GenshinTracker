@@ -4,16 +4,16 @@ const rarete4CharactersList = document.getElementById('rarete-4-personnages');
 const rarete5WeaponsList = document.getElementById('rarete-5-armes');
 const rarete4WeaponsList = document.getElementById('rarete-4-armes');
 
-// Function to create an li element for a character or a weapon
-function createLiElement(item) {
+// Function to create an li element for a character
+function createLiChar(item) {
   const li = document.createElement('li');
-  li.id = item.id;
-  li.className = `element_${item.type} rarete-${item.rarity} ${item.weaponType}`;
-        console.log(`element_${item.type} rarete-${item.rarity} ${item.weaponType}`);
+  console.log(item);
+  console.log(item.nom_personnage);
+  li.id = item.nom_personnage;
+  li.className = `element_${item.element_personnage} rarete-${item.rarete_personnage} ${item.arme_personnage}`;
   const img = document.createElement('img');
-  img.src = item.image;
+  img.src = item.portrait_personnage;
   li.appendChild(img);
-        
   return li;
 }
 
@@ -23,7 +23,7 @@ fetch('/characters/5')
   .then(characters => {
     // Create an li element for each character and append it to the list
     characters.forEach(character => {
-      const li = createLiElement(character);
+      const li = createLiChar(character);
       rarete5CharactersList.appendChild(li);
     });
   })
@@ -35,11 +35,24 @@ fetch('/characters/4')
   .then(characters => {
     // Create an li element for each character and append it to the list
     characters.forEach(character => {
-      const li = createLiElement(character);
+      const li = createLiChar(character);
       rarete4CharactersList.appendChild(li);
     });
   })
   .catch(error => console.error(error));
+
+// Function to create an li element for a character or a weapon
+function createLiWeap(item) {
+  const li = document.createElement('li');
+  console.log(item);
+  console.log(item.nom_arme);
+  li.id = item.nom_arme;
+  li.className = ` ${item.type_arme} rarete-${item.rarete_arme}`;
+  const img = document.createElement('img');
+  img.src = item.portrait_arme;
+  li.appendChild(img);
+  return li;
+}
 
 // AJAX request to retrieve weapons with rarity 5
 fetch('/weapons/5')
@@ -47,7 +60,7 @@ fetch('/weapons/5')
   .then(weapons => {
     // Create an li element for each weapon and append it to the list
     weapons.forEach(weapon => {
-      const li = createLiElement(weapon);
+      const li = createLiWeap(weapon);
       rarete5WeaponsList.appendChild(li);
     });
   })
@@ -59,7 +72,7 @@ fetch('/weapons/4')
   .then(weapons => {
     // Create an li element for each weapon and append it to the list
     weapons.forEach(weapon => {
-      const li = createLiElement(weapon);
+      const li = createLiWeap(weapon);
       rarete4WeaponsList.appendChild(li);
     });
   })

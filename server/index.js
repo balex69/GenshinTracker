@@ -19,7 +19,7 @@ app.use(express.static('public'));
 // Handle GET requests to retrieve characters with a specific rarity
 app.get('/characters/:rarity', (req, res) => {
   const rarity = req.params.rarity;
-  const sql = `SELECT (nom_personnage, rarete_personnage, arme_personnage, portrait_personnage, element_personnage) FROM personnages WHERE rarete_personnage = ?`;
+  const sql = `SELECT * FROM personnages WHERE rarete_personnage = ?`;
   
   db.all(sql, rarity, (err, rows) => {
     if (err) {
@@ -41,7 +41,7 @@ app.get('/characters/:rarity', (req, res) => {
 // Handle GET requests to retrieve weapons with a specific rarity
 app.get('/weapons/:rarity', (req, res) => {
   const rarity = req.params.rarity;
-  const sql = `SELECT (nom_arme, rarete_arme, type_arme, portrait_arme) FROM armes WHERE rarete_arme = ?`;
+  const sql = `SELECT * FROM armes WHERE rarete_arme = ?`;
   
   db.all(sql, rarity, (err, rows) => {
     if (err) {
